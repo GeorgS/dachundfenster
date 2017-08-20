@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>DF Dach und Fenster</title>
+  <meta name="description" content="{{site.description}}">
+  <meta name="author" content="Dach und Fenster">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/img/favicon.ico?v=2" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico?v=2" type="image/x-icon">
+
+  <link rel="stylesheet" href="./css/material.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div class="layout-transparent mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title"><img src="/img/logo.png" /> {{site.title}}</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation -->
+        <nav class="mdl-navigation">
+          {% for menuitem in site.menu %}
+            <a class="mdl-navigation__link" data-scroll href="#{{menuitem | downcase | replace: ' ', '-' }}">{{menuitem}}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title"><img src="/img/logo.png" /><br />{{site.title}}</span>
+      <nav class="mdl-navigation">
+        {% for menuitem in site.menu %}
+          <a class="mdl-navigation__link" data-scroll href="#{{menuitem | downcase | replace: ' ', '-'}}">{{menuitem}}</a>
+        {% endfor %}
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      {{ content }}
+
+      <h1 id="home" class="hero-header">Wilkomme bei Dach und Fenster<br/><small>Fenster, Türen, Sonnenschutz und ORAMA Minimal Frame</small></h1>
+      <div id="über-uns" class="feature-section">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col">
+              <div class="text dark">
+                <h3>Über Uns</h3>
+
+                <p>Durch unsere mehr als 25 Jahre lange Erfahrung im Baugewerbe wissen wir worauf es ankommt.</p>
+                <p>Gerne gehen wir auf Wünsche und Bedürfnisse unserer Kunden ein, scheuen nicht vor neuen Ideen und Projekten zurück, verlieren aber auch nicht den Fokus auf das Praktikable.</p>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col img team"></div>
+          </div>
+      </div>
+      <div class="feature-section">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col img timeline"></div>
+            <div class="mdl-cell mdl-cell--6-col">
+              <div class="text">
+                <h3>Organisierter Ablauf</h3>
+
+                <p>Unser Beratungsteam ergründet bei einem Erstgespräch Ihre Anforderungen und Wünsche uns stellt Ihnen daraufhin ein Angebot.</p>
+                <p>Bei Bestellung wir das exakte Naturmaß aufgenommen und die Ware anschließend bei einem unserer Exklusivpartner bestellt.</p>
+                <p>Eine fachgerechte Montage ist bei uns eine Selbstverständlichkeit.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="leistungen" class="gray-bg">
+        <div class="container">
+            <h3 class="feature-title">Unsere Leistungen</h3>
+            <div class="mdl-grid feature-grid">
+              {% for leistung in site.data.leistungen %}
+                <div class="mdl-cell mdl-cell--4-col">
+                  <div class="icon">
+                    <img src="{{leistung.bild}}" />
+                    <h4>{{leistung.titel}}<h4>
+                    <p>{{leistung.beschreibung}}</p>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+      <div id="produkte" class="feature-section">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col img minimalframe"></div>
+            <div class="mdl-cell mdl-cell--6-col">
+              <div class="text dark">
+                <h3>ORAMA Minimal Frame</h3>
+                <p>Orama ist das griechische Wort für Vision. Orama Minimal Frames hat sich der Aufgabe verschrieben, auch Ihre Vision zum Leben zu erwecken.</p>
+                <p>Das Ziel lautet, für sämtliche Anforderungen von Architekten die richtige Rahmenlösung zu finden, egal wie extrem oder ambitioniert sie ist.</p>
+                <p>Das Design aller Orama Produkte ist auf Perfektion ausgerichtet.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="feature-section">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col">
+              <div class="text dark">
+                <h3>Hochwertige Adoro Haustüren</h3>
+                <p>Diese Türen zeichnen sich durch perfekte Passgenauigkeit aus.</p>
+                <p>Um die Langlebigkeit, Standsicherheit und Passgenauigkeit zu garantieren, wurde ein System zum Patent angemeldet, dass ein stetiges sanftes Schließen, auch bei jahrelanger hoher Beanspruchung, gewährleistet.</p>
+                <p>Wärmeschutz mit 0,49 W/m²K, möglicher Einbruchsschutz RC2 und RC3 sowie ein spezielles Dichtungssystem – all das macht Ihre Haustüre von Adoro zu etwas Besonderem.</p>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--6-col img tueren"></div>
+          </div>
+      </div>
+      <div class="feature-section">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col img sonnenschutz"></div>
+            <div class="mdl-cell mdl-cell--6-col">
+              <div class="text dark">
+                <h3>Funktionaler Sonnenschutz</h3>
+                <p>Die geschlossene, flächige Optik eines Rollladens und gleichzeitig die Sonnenschutz- und Lichtlenkungsfunktionen von Raffstoren: das ist die neue Comfort- und Design-Lamelle von ROMA.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="gray-bg">
+        <div class="container">
+            <h3 class="feature-title">Unsere Produkte</h3>
+            <div class="mdl-grid feature-grid">
+              {% for produkt in site.data.produkte %}
+                <div class="mdl-cell mdl-cell--4-col">
+                  <img src="{{produkt.bild}}" />
+                  <h4>{{produkt.titel}}<h4>
+                  <p>{{produkt.beschreibung}}</p>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+
+      <div id="kontakt" class="contact-section">
+        <div class="container">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--8-col">
+              <h3>DF Dach & Fenster Handels GmbH</h3>
+              <p>
+              Alexander Groß Gasse 45<br/>
+              2345 Brunn am Gebirge<br />
+              <br/ >ATU 69744128</p>
+              <h3>Schauraum Mödling<h3>
+              <p>Enzersdorferstraße 19<br/>
+              2340 Mödling</p>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col" style="padding-top: 4em;">
+              <a class="typeform-share button" href="https://dachundfenster.typeform.com/to/pLMt5L" data-mode="drawer_right" style="display:inline-block;text-decoration:none;background-color:#ed8100;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 33px;border-radius:4px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" target="_blank">Anfrage senden </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+              <br />
+              <br />
+              <address>
+                <div class="address-description">Telefon</div>
+                <div class="address-content"><a href="tel:+4367688633636">+43 (0) 676 88 633 636</a></div>
+                <div class="address-description">E-Mail</div>
+                <div class="address-content"><a href="mailto:office@dachundfenster.at">office@dachundfenster.at</a></div>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="mdl-mini-footer">
+        <div class="container">
+          <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo" style="text-align: center;">&copy; DF Dach & Fenster Handels GmbH<br /><a href="/impressum.html" target="_blank">Impressum</a></div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "rgba(100, 100, 100, .9)"
+      },
+      "button": {
+        "background": "#ea8110",
+        "text": "#ffffff"
+      }
+    },
+    "content": {
+      "message": "Diese Website verwendet Cookies, um Ihren Besuch so  angenehm wie möglich zu gestalten.",
+      "dismiss": "Okay",
+      "link": "Mehr Erfahren"
+    }
+  })});
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-104418453-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <script src="./js/material.min.js"></script>
+</body>
+</html>
