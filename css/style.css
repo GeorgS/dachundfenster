@@ -66,6 +66,7 @@ h1 small {
 }
 
 .feature-section .img.team {
+  background-size: cover;
   background-image: url('/img/team.jpg');
 }
 
